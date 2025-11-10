@@ -113,26 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// CTA Button Click Handlers
-const ctaButtons = document.querySelectorAll('.btn-primary, .nav-cta');
+// CTA Button Click Handlers - buttons now link to contact.html, so no JS needed
+// But we'll keep this for any buttons that might not have links
+const ctaButtons = document.querySelectorAll('.btn-primary:not(a .btn-primary), .nav-cta:not(a .nav-cta)');
 
 ctaButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Scroll to contact section or show a form
-        const contactSection = document.querySelector('#contact');
-        if (contactSection) {
-            const offsetTop = contactSection.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        } else {
-            // If no contact section, scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    });
+    // Only add handler if button doesn't have a parent link
+    if (!button.closest('a')) {
+        button.addEventListener('click', () => {
+            window.location.href = 'contact.html';
+        });
+    }
 });
 
