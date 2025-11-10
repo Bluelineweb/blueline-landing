@@ -66,7 +66,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 50px;
 }
 
 .logo a {
@@ -85,9 +85,10 @@ body {
 }
 
 .logo-img {
-    height: 70px;
+    height: 50px;
     width: auto;
-    max-width: 280px;
+    max-width: 200px;
+    max-height: 50px;
     object-fit: contain;
     display: block;
     transition: var(--transition);
@@ -300,7 +301,7 @@ body {
     300px 210px,
     300px 210px;
     animation: hero-rain 150s linear infinite;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .hero-animated-bg::after {
